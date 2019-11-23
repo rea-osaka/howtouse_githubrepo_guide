@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>GitHubリポジトリをダウンロードする</title>
+  <meta name="description" content="GitHubリポジトリをダウンロードする" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="GitHubリポジトリをダウンロードする" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="GitHubリポジトリをダウンロードする" />
+  
+  
+  
+
+<meta name="author" content="Syunsuke Fukuda" />
+
+
+<meta name="date" content="2019-11-23" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">githubリポジトリの使い方<a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="#section"><i class="fa fa-check"></i><b>1</b> 事前に</a></li>
+<li class="chapter" data-level="2" data-path="index.html"><a href="#github"><i class="fa fa-check"></i><b>2</b> GitHubの構造とリポジトリ</a></li>
+<li class="chapter" data-level="3" data-path="index.html"><a href="#section-1"><i class="fa fa-check"></i><b>3</b> リポジトリ</a></li>
+<li class="chapter" data-level="4" data-path="index.html"><a href="#rstudio"><i class="fa fa-check"></i><b>4</b> リポジトリとRStudioのプロジェクト</a></li>
+<li class="chapter" data-level="5" data-path="index.html"><a href="#section-2"><i class="fa fa-check"></i><b>5</b> あとがき</a><ul>
+<li class="chapter" data-level="5.1" data-path="index.html"><a href="#section-3"><i class="fa fa-check"></i><b>5.1</b> ダウンロードとクローン</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="index.html"><a href="#github-desktop"><i class="fa fa-check"></i><b>5.1.1</b> GitHub Desktopというアプリ</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="index.html"><a href="#githubgit"><i class="fa fa-check"></i><b>5.2</b> GitHubとGit</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="index.html"><a href="#section-4"><i class="fa fa-check"></i><b>5.2.1</b> クローンとプッシュ</a></li>
+<li class="chapter" data-level="5.2.2" data-path="index.html"><a href="#section-5"><i class="fa fa-check"></i><b>5.2.2</b> ローカルとリモート</a></li>
+<li class="chapter" data-level="5.2.3" data-path="index.html"><a href="#section-6"><i class="fa fa-check"></i><b>5.2.3</b> コミット</a></li>
+<li class="chapter" data-level="5.2.4" data-path="index.html"><a href="#section-7"><i class="fa fa-check"></i><b>5.2.4</b> ブランチ</a></li>
+<li class="chapter" data-level="5.2.5" data-path="index.html"><a href="#section-8"><i class="fa fa-check"></i><b>5.2.5</b> マージ</a></li>
+<li class="chapter" data-level="5.2.6" data-path="index.html"><a href="#github-1"><i class="fa fa-check"></i><b>5.2.6</b> GitHubとプルリクエスト</a></li>
+<li class="chapter" data-level="5.2.7" data-path="index.html"><a href="#section-9"><i class="fa fa-check"></i><b>5.2.7</b> 個人的な使い方</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">GitHubリポジトリをダウンロードする</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">GitHubリポジトリをダウンロードする</h1>
+<p class="author"><em>Syunsuke Fukuda</em></p>
+<p class="date"><em>2019-11-23</em></p>
+</div>
+<p>データ委員会では、いくつものツールをGitHub上で公開しています。
+そこで、ここでは、このGitHub上のツールをどうやって利用するのかを紹介します。</p>
+<div id="section" class="section level1">
+<h1><span class="header-section-number">1</span> 事前に</h1>
+<p>データ委員会では、Rのツールを使うための初心者向けドキュメントを公開しています。
+GitHubからツールをダウンロードする前に、Rのインストールや、
+Rの基本的な使い方に関する以下の二つのドキュメントもご覧ください。</p>
+<ul>
+<li><a href="https://syunsuke.github.io/r_install_guide_for_beginners/">初心者向けRのインストールガイド</a></li>
+<li><a href="https://syunsuke.github.io/r_beginners_guide/">Rビギナーズガイド</a></li>
+</ul>
+</div>
+<div id="github" class="section level1">
+<h1><span class="header-section-number">2</span> GitHubの構造とリポジトリ</h1>
+<p>GitHubには、まず、ユーザーや組織毎に与えられる<strong>アカウント</strong>というものがあります。
+そして、そのアカウントが行っている開発が保存されている個々の場所を<strong>リポジトリ</strong>（リポジトリとは<strong>倉庫</strong>という意味の英語です。）と呼んでいます。
+GitHubの各アカウントのページを開くと、そのアカウントが持っているリポジトリの一覧を見ることが出来ます。
+ここで、rea-osakaのGitHubページを見てみましょう。
+GitHubのページを見るために、<strong>GitHubのアカウントを持っている必要はありません</strong>ので、特に何の準備も必要ありません。</p>
+<p><a href="https://github.com/rea-osaka/" class="uri">https://github.com/rea-osaka/</a></p>
+<p>図<a href="#fig:repo001">2.1</a>は、実際のrea-osakaのGitHubのページです。</p>
+<div class="figure" style="text-align: center"><span id="fig:repo001"></span>
+<img src="images/repo001.png" alt="GitHubのページ" width="95%" />
+<p class="caption">
+Figure 2.1: GitHubのページ
+</p>
+</div>
+<p>そこにみられる<code>making_improved_koujiDB</code>や、<code>address_db</code>などが、リポジトリです。</p>
+<p>ここで、GitHub内でのリポジトリを表す記述の仕方は一般に、
+「誰それ（アカウント）がやっている/何々というプロジェクト（リポジトリ）」という風にかかれ、
+リポジトリが一意に決定される表現が用いられています。
+そこで、例えば、rea-osakaアカウントのretiというリポジトリは以下のように表現されます。</p>
+<pre><code>rea-osaka/reti</code></pre>
+<p>この表記は、巷のWebページでのリポジトリの紹介でもみられますし、
+アプリの設定ファイル内でもつかわれます。
+Rにおいても、パッケージのインストールで引数に渡す文字列もそうです。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># retiパッケージのインストール</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;rea-osaka/reti&quot;</span>)</span></code></pre></div>
+<p>また、この表記の前に<code>https://github.com/</code>
+を付けることでそのリポジトリのページのURLになることを覚えておくと役に立つかもしれません。</p>
+</div>
+<div id="section-1" class="section level1">
+<h1><span class="header-section-number">3</span> リポジトリ</h1>
+<p><code>rea-osaka/rmarkdown_to_pdf_document</code>というリポジトリのページを見てみましょう。</p>
+<p><a href="https://github.com/rea-osaka/rmarkdown_to_pdf_document" class="uri">https://github.com/rea-osaka/rmarkdown_to_pdf_document</a></p>
+<p>図<a href="#fig:pdfdocpage001">3.1</a>は、実際の<code>rea-osaka/rmarkdown_to_pdf_document</code>のページです。</p>
+<p>ページ上部にリポジトリ名が記され、その下にタブが並んでいます。
+デフォルトでは<strong>code</strong>が選択されており、
+ページ内には、そのリポジトリに保存されているファイルの一覧が表示されています。</p>
+<div class="figure" style="text-align: center"><span id="fig:pdfdocpage001"></span>
+<img src="images/pdfdocpage001.png" alt="リポジトリのページ" width="95%" />
+<p class="caption">
+Figure 3.1: リポジトリのページ
+</p>
+</div>
+<p>ここで、GitHubでは、このファイル一覧、すなわち、
+リポジトリの内容を簡単に丸ごとダウンロードすることが出来るようになっています。</p>
+<p>ファイル一覧の右上にある緑のボタン（図<a href="#fig:clone001">3.2</a>）に注目してください。
+ボタンには「clone or download」と書かれています。
+このボタンをクリックしてください。</p>
+<div class="figure" style="text-align: center"><span id="fig:clone001"></span>
+<img src="images/clone001.png" alt="緑のボタン" width="60%" />
+<p class="caption">
+Figure 3.2: 緑のボタン
+</p>
+</div>
+<p>クリックすると、図<a href="#fig:clone002">3.3</a>のように、2択を迫られます。</p>
+<div class="figure" style="text-align: center"><span id="fig:clone002"></span>
+<img src="images/clone002.png" alt="２択" width="60%" />
+<p class="caption">
+Figure 3.3: ２択
+</p>
+</div>
+<p>右側の「Download Zip」を選択します。</p>
+<p>選択した直後に、図<a href="#fig:clone003">3.4</a>の用に表示されることがあります。
+これは、リポジトリ更新のお知らせを設定するためのサインインを促すダイアログですが、
+初めは気にすることはありません。
+ダイアログ以外のところをクリックすると消えます。
+サインインする必要も、GitHubにアカウントを作成する必要もありません。</p>
+<div class="figure" style="text-align: center"><span id="fig:clone003"></span>
+<img src="images/clone003.png" alt="設定のためのサインインを促すダイアログ" width="60%" />
+<p class="caption">
+Figure 3.4: 設定のためのサインインを促すダイアログ
+</p>
+</div>
+</div>
+<div id="rstudio" class="section level1">
+<h1><span class="header-section-number">4</span> リポジトリとRStudioのプロジェクト</h1>
+<p>rea-osakaで公開しているリポジトリのうち、
+Rに関連したものの多くは、
+RStudioのプロジェクトとして利用できるようになっています。</p>
+<p>ダウンロードして展開したフォルダの中に
+拡張子が「.Rproj」となっているファイルがあるなら、
+そのリポジトリはRStudioのプロジェクトとなっています。</p>
+<p>RStudioのプロジェクトであると、
+拡張子が「.Rproj」であるプロジェクトファイルをダブルクリックするだけで、
+RStudioが立ち上がり、
+そのフォルダをカレントディレクトリに設定した
+コンソールが使えるようになります。</p>
+<p>ですから、プロジェクト内のスクリプトが適切な相対パスで記述されている限り、
+リポジトリ内にある別ディレクトリのデータなども適切に読み込んで
+実行させることが出来ます。</p>
+<p>すなわち、プロジェクトとしてリポジトリを管理しておけば、
+リポジトリをダウンロードするだけで、作成した人と同じ相対パス環境が担保され、
+RStudioを開いて、そのままスクリプトを実行するだけで、
+作成者と同じスクリプトの実行結果を簡単に得ることが出来ます。</p>
+</div>
+<div id="section-2" class="section level1">
+<h1><span class="header-section-number">5</span> あとがき</h1>
+<p>以上のやり方だけ覚えておけば、
+GitHubに公開されているリポジトリを自分のパソコンにダウンロードし、
+そのリポジトリの中のプログラムをRStudioで実行したり、
+レポートを編集したりすることが出来るようになります。</p>
+<p>つまりは、GitHubのページにあるダウンロードボタンを押して
+zipファイルをダウンロードするだけです。</p>
+<p>しかし、もし、更にGitHubについて興味があるならば、
+以下を読み進めて見てください。</p>
+<div id="section-3" class="section level2">
+<h2><span class="header-section-number">5.1</span> ダウンロードとクローン</h2>
+<p>GitHubに興味がある人だったり、Gitというバージョン管理システムを聞いたことがある人にとっては、
+GitHubというと、なにか複雑で専門的なものだと感じる人が多いと思います。
+しかし、リポジトリをダウンロードすること自体は、
+バージョン管理とは何の関係もなく、リポジトリ単位のディレクトリを
+圧縮したものを単純にダウンロードするだけです。
+ですから、ダウンロードしたフォルダの中には、gitによる履歴情報もありません。
+GitHubのことをよく知らない人であっても大丈夫です、
+何か知らないものが入っていることもないですし、
+勝手にわけの変わらないことがおこることもありません。</p>
+<p>一方で、開発に携わっている人はダウンロードではなくて、
+クローンという方法でリポジトリを自分のパソコンにコピーします。</p>
+<p>通常、プログラミング等の開発は、
+少しづつプログラムのコードが書き加えられて進んでいきますが、
+その際に、この進んでいく過程を一定の区切りごとにその状態を記録して、
+保存しておく事ができるバージョン管理システムというツールが活用されます。
+このバージョン管理システムには有名なものがいくつもありますが、
+そのひとつが、<strong>Git</strong>です。</p>
+<p>GitHubのリポジトリにあるプログラムはすべて、<strong>Git</strong>によるバージョン管理のもとにあります。
+開発者が、そのリポジトリの開発にかかわる時には、
+そのGitにって管理された履歴全体を自分のパソコンにコピーする必要があるので、
+単なる今の状態をダウンロードするのではなく、
+リポジトリを<strong>クローン</strong>することが必要になります。</p>
+<div id="github-desktop" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> GitHub Desktopというアプリ</h3>
+<p>さて、これは、余談ですが、
+巷のGitHub情報をみれば、クローン等を行う場合、シェルのコンソール等から
+呪文のようなgitコマンドを駆使する方法が紹介されています。
+Macの場合、デフォルトでUnix系の環境下にあり、
+普通のシェルが動いているのでgitコマンドも使いやすいのですが、
+Windowsの場合、gitコマンドをコンソールから発行すること自体の準備が必要だったり、
+初心者にとっては少し敷居が高い状態にあります。
+しかし、実は、Windowsでクローンするのにコンソールにコマンドを打つ必要は全くありません。</p>
+<p>先ほど、リポジトリのページの「緑のボタン」を押した時に出てくる
+ダイアログを思い出してください。（図<a href="#fig:clone002">3.3</a>）
+２択のもう一方には「Open in Desktop」とかかれていました。
+実は、この選択肢は、「デスクトップに開く」という意味ではありません。
+<strong>「GitHub Desktop」というアプリで開く</strong>という意味です。
+GitHub Desktopは、GitHub純正のリポジトリ管理アプリであり、
+GitHubのリポジトリ管理をGUIで簡単にしたアプリです。</p>
+<p>間違って、クリックした人も大丈夫です。
+GitHub Desktopがインストールされていない場合は、インストールが促され、
+そのアプリが開いて、クローンしてくれます。
+デフォルトのクローン先はドキュメントフォルダの中の
+<code>GitHub</code>というディレクトリ以下にクローンされます。</p>
+<p>GitHub Desktopをインストールすれば、
+Gitのツールも一緒にインストールされるので、
+別途何かをインストール必要もありません。
+この後に紹介している各種Gitの操作も、
+GitHub Desktop上でできます。</p>
+<p>ですから、もし、実際に自分でGitやGitHubを活用しようとするならば
+GitHub Desktopの利用をお勧めします。</p>
+<p><a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a></p>
+<div class="figure" style="text-align: center"><span id="fig:githubdesktop001"></span>
+<img src="images/githubdesktop001.png" alt="GitHub Desktopのページ" width="95%" />
+<p class="caption">
+Figure 5.1: GitHub Desktopのページ
+</p>
+</div>
+</div>
+</div>
+<div id="githubgit" class="section level2">
+<h2><span class="header-section-number">5.2</span> GitHubとGit</h2>
+<p>GitHubでは何が行われているか、Gitとはなんなのか、もう少し話を続けてみます。
+GitやGitHubの参考書や解説記事を読む時の前提知識として参考にしてみてください。</p>
+<div id="section-4" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> クローンとプッシュ</h3>
+<p>上記で、開発者はダウンロードではなく、クローンをするとお話ししました。
+開発者のパソコンにクローンされた、
+リポジトリは、プログラムを改良するためにその中身が書き換えられて行きます。
+最終的に完成した改良版のプログラムは、
+また、GitHubのリポジトリで公開されることになりますが、
+クローンとは逆に、
+自分のパソコンから、GitHubへリポジトリの内容がアップロードされることになります。
+このアップロードを<strong>プッシュ</strong>といいます。</p>
+</div>
+<div id="section-5" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> ローカルとリモート</h3>
+<p>クローンとプッシュについては、
+「<strong>ローカル</strong>」と「<strong>リモート</strong>」という単語が一緒によく出てきます。
+「ローカル」は、自分のパソコンのことです。
+「リモート」は、主にGitHubのことです。
+「リモートからローカルにクローンする」という風に使われます。
+クローンされたプログラムは、ローカルで書き換えられ、
+改良が完成したらGitHub上のリポジトリにアップロードして、その変更を反映します。
+そういう時に、「ローカルからリモートへプッシュする」と言います。</p>
+</div>
+<div id="section-6" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> コミット</h3>
+<p>クローンとプッシュは、ローカルとリモート間のやり取りの話です。
+ここからは、主にローカルでの開発作業の途中でのgitのキーワードについてみてみましょう。</p>
+<p>クローンしたプログラムを書き換えていく際に、
+gitでデータをセーブすることを「<strong>コミット</strong>」といいます。
+gitでのセーブは、
+セーブデータの上書きではなく、
+その都度のセーブデータが、ずっと保存されて行きます。
+ですから、開発を始めた時点から、
+今までにコミットしたすべての時点の状態を再現することが出来ます。
+簡単に言えば、gitは、バックアップとリストアの機能を行うためのアプリなのです。</p>
+<p>コミットにつきもののキーワードとして「<strong>ステージング</strong>」があります。
+gitは、高機能なバックアップシステムなので、
+コミットする範囲を柔軟に選択できるのです。</p>
+<p>gitで経過の記録をとることが「写真を撮る」に例えられることがあります。
+写真館で写真を撮る時のように、
+写真を撮るときには舞台（ステージ）に載るという風にイメージして見てください。
+登場人物は、各ファイルです。
+そして、gitでのコミットは、ステージ上にのっている登場人物だけを記録します。
+ですから、gitでは、コミットの前に必ず、
+何をコミットするかの指定をする作業がつきものになります。</p>
+<p>gitを使い始めた時には、
+何のためにステージングするのか分からないことが多く、
+いちいちステージングするのがめんどくさく感じるものですが、
+このコミットの対象範囲を限定する機能を上手に使うことで、
+意味のあるまとまりごとのコミットを作って管理することが出来るようになります。</p>
+</div>
+<div id="section-7" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> ブランチ</h3>
+<p>続いて、「<strong>ブランチ</strong>」というキーワードもgitの作業で必ず目にことになります。
+リポジトリは、一見、ファイルが入っている普通のディレクトリのように見えますが、
+実は、いくつもの<strong>並列世界</strong>を持つことが出来ます。
+そして、このそれぞれの並列世界のことをブランチといいます。
+同じフォルダの中に、コピーが重複して存在しているイメージです。</p>
+<p>通常、一番初めにリポジトリを作った時は、ブランチは一つで、
+「master（マスター）」というブランチ名がついています。
+他の新しいブランチは、自分の好きな別のブランチをコピーすることによって作成されます。
+そして、この新しいブランチは、いつでも、好きなだけ作ることが出来ます。</p>
+<p>ブランチは、切り替えて使います。
+ブランチを切り替えることを「<strong>チェックアウト</strong>」といいます。
+「チェックアウト」の語感が「切り替える」と異なるため、誤解しそうですが、
+「ブランチをチェックアウトする」というのは、
+テレビのチャンネルをガチャガチャ切り替えるのと同じイメージです。</p>
+<p>ブランチは、ブランチ毎に内容が独立しているので、
+異なる作業をすれば、同じディレクトリ内に、
+異なる内容のブランチが同時に並列に存在することになります。
+そして、ブランチを切り替えると一瞬でディレクトリ内容が切り替わります。</p>
+<p>一般にプログラムを改良していく場合に、ブランチ機能が利用されます。
+もともとある、プログラムをいきなり書き換えるのではなく、
+一旦、コピーし（新しいブランチを作って切り替え）、
+そこで、プログラムの変更を行っていきます。
+この場合、もともとのプログラムは、別に残っているので、
+いつでもブランチを切り替えれば、元のプログラムも使うことが出来ます。
+更には、いくらでも、ブランチが作成できるので、
+同時進行で、別の試みをいくらでも試すことも可能です。</p>
+</div>
+<div id="section-8" class="section level3">
+<h3><span class="header-section-number">5.2.5</span> マージ</h3>
+<p>各ブランチの始まりは、どこかのブランチからのコピーで始まります。
+そして、各ブランチはいらなくなって削除されて終わりを迎えたり、
+他のブランチと合体することで片方がなくなって終わりを迎えたりします。</p>
+<p>ブランチそのものは、あるディレクトリ内に並列世界ができるだけなので、
+作成されたブランチはそれぞれ我が道を行くこともできるわけですが、
+開発者は、ある秩序立てたルールのもとに、
+これらの機能を利用することが通常です。</p>
+<p>そのルールは、
+「master」という名前のブランチを正当なものとして、
+他のブランチでプログラムを編集し、それが完成したとき、
+そのブランチの内容を反映させるために「master」ブランチに合体させるというものです。
+そして、このブランチを合体させることを「<strong>マージ</strong>」と呼びます。</p>
+</div>
+<div id="github-1" class="section level3">
+<h3><span class="header-section-number">5.2.6</span> GitHubとプルリクエスト</h3>
+<p>ここまで、ローカルでのgitの主な機能について、
+コミット、ブランチ、マージというキーワードの形で紹介してみました。
+gitというツールが何をするものかについて、少しイメージが掴めたでしょうか。</p>
+<p>では、一方で Git と似たような名前を持つ GitHub とは、何なのでしょうか？
+GitHubが開発においてどのように活用されているかを紹介してみます。</p>
+<p>まずは、GitHubは、gitで管理しているリポジトリをWeb上（リモート）で公開しているものです。
+ですから、クローンのところでお話しした通り、
+リモートのリポジトリをクローンすることで、
+ローカルに今までの開発過程を丸ごと再現することが出来ます。
+そして、
+ローカルにクローンされたリポジトリは、
+自分の好きなようにいくらでもプログラムの改造ができます。</p>
+<p>ここで、クローンしたプログラムを改良して、
+めちゃめちゃ素晴らしいプログラムが完成したとします。
+そうしたら、
+このローカルで完成したプログラムをリモートにプッシュすることで、
+新たに完成した更に素晴らしいプログラムを、また、GitHubで世界に公開することが出来ます。</p>
+<p>しかしここで、常識的に考えて、
+誰でもがプッシュできるとすると、
+何の検証もされていないプログラムが紛れ込んだり、
+悪意でいたずらするものがいたとしたら、いたずらもし放題になってしまいます。
+ですから、GitHubでは、当然、アカウントごとにプッシュできる権限が制限されていて、
+権限を持っている人以外はリモートリポジトリの書き換えができないようになっています。</p>
+<p>そこで、GitHubのシステムで最も重要なキーワード「プルリクエスト」が登場します。</p>
+<p>前述で、リポジトリをコピーすることを「クローン」と言っていました。
+しかし、実は、GitHubのコピーにはもう一つの種類があります。
+「クローン」は、ローカルにコピーすることを言います。
+一方で、もう一つのコピーとは、
+自分がGitHub上にアカウントを持っている場合、
+他のアカウントのリポジトリを自分のアカウントにコピーすることをいい、
+これを「<strong>フォーク</strong>」と呼んでいます。</p>
+<p>他人のリポジトリを自分のアカウントにコピーするなんて、
+何かいけないことをしているように思うかもしれませんが、
+これが公開されているプログラムの改変を行っていくときの通常の流れになります。
+そして、フォークすることで、自分のアカウントのリポジトリになっているのですから、
+それをローカルにクローンして改変作業を行った結果を、
+遠慮なくプッシュして、改変を公開することが出来ます。
+つまり、自分のアカウント上のフォークしてきたリポジトリの内容は、
+フォーク元のアカウントのリポジトリよりも、より良い状態の亜種が出来たことになります。</p>
+<p>ここで、本流であるフォーク元のアカウントの人に、問いかけることが出来ます。</p>
+<p><strong>「こんな風に改良してみましたけど、採用してみませんか？」</strong></p>
+<p>これを、GitHubでは「<strong>プルリクエスト</strong>」と呼んでいます。</p>
+<p>本流のリポジトリを管理している管理者は、
+その提案を受け入れて、その変更をリポジトリに「<strong>プル</strong>」することが出来ます。
+もちろん、受け入れるか、入れないかは、管理者が自由に選択できます。</p>
+<p>GitHub上のオープンソースの開発においては、
+勝手に亜種を作るというよりも、
+もとのリポジトリ上のISSUEという問題定義の場所において、
+話題になっている不具合であったり、機能改善の提案であったりを
+出来る人が手分けして、改善していくイメージです。
+そして、改善にかかわっていくことは「貢献（コントリビュート）」と呼ばれ、
+沢山改善にかかわっている人達はやがてコントリビューターとして、認識されるようになります。
+はじめて貢献する場合等には、フォークしてプルリクエストしていますが、
+そのうち、コントリビューターとして認識されるようになると、
+開発用のブランチを本流のリポジトリにプッシュする権限をもらったりして、
+マスターブランチとの間でマージするようになったりもします。</p>
+</div>
+<div id="section-9" class="section level3">
+<h3><span class="header-section-number">5.2.7</span> 個人的な使い方</h3>
+<p>さて、GitHubやGitは、単なるツールであって、
+こういう風に<strong>使わなければならない</strong>というものではありません。
+ツールでできることを把握したうえで、<strong>こう使えば便利だ</strong>というふうに使われいるにすぎません。</p>
+<p>先にも話した通り、GitやGitHubは一般的に、
+チームによる開発をスムーズにするためのプラットホームなんていう
+小難しいイメージを持つことも多いですが、
+個人で使うならば、
+一般的な共有ストレージである dropbox や google drive のように使うと便利です。
+また、プログラミングはちょこちょこと書いていると、
+直ぐにどこかに埋もれて無くなってしまいます。
+しかし、GitHubに入れておけば、ずーっと昔に書いたものでも、懐かしく（恥ずかしく）見直すことが出来ます。</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["my_book.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,2 +1,1 @@
-# howtouse_githubrepo_guide
-GitHubのリポジトリのダウンロードの仕方
+# GitHubのリポジトリの使い方
